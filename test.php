@@ -19,7 +19,7 @@ wp_enqueue_style('test','test.css');
 }
 
 add_shortcode( 'test', 'test_shortcode' );
-function test_shortcode() {
+function test_shortcode() 
 
 
 ob_start();
@@ -27,7 +27,7 @@ ob_start();
     <div >This is a test shortcode!</div>
     <?php
     return ob_get_clean();
-}
+
 
 
 function test_shortcode() {
