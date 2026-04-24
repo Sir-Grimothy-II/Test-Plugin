@@ -18,14 +18,25 @@ function enqueue_test_script(){
 wp_enqueue_style('test','test.css');
 
 }
+function rando($number) {
+    $randell = $number;
+    return $randell;
 
+
+}
 add_shortcode( 'test', 'test_shortcode' );
 
 function test_shortcode() {
+  $bobby=rando(5);
     ob_start();
-    ?>
-    <div >This is a test shortcode!</div>
-    <?php
+    
+    if($bobby == 5) {
+        ?> <div >your height in feet is <? echo ($bobby) ?> !</div>
+        <?php 
+    } else { ?>
+        
+        <p> You ain't tall enough, sit down. </p> <?php
+    }
     return ob_get_clean(); // Return the captured content as a string
 }
 
