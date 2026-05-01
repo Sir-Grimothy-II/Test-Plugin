@@ -54,19 +54,26 @@ function test_shortcode() {
 //
 
 
-for ($cashew = 16; $cashew >= 10; $cashew--) {
-    echo $cashew . ' ';
-}
+//for ($cashew = 16; $cashew >= 10; $cashew--) {
+ //   echo $cashew . ' ';
+//}
 
 
+$fruit = ['apple', 'banana', 'orange', 'grape', 'kiwi'];
+    $i = 0;
+    foreach ($fruit as $f) {
+         echo $f; }
 
+    foreach ($fruit as $f) {
+       
+         $fruit[$i] = $f . ' ';
+            echo $fruit[$i];
+        $i++;
+    }
+foreach ($fruit as $f) {
+         echo $f; }
 
-
-
-
-
-
-
+    include 'test_2.php';
 
 
 
