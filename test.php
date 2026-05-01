@@ -24,25 +24,33 @@ function rando($number) {
 
 
 }
+
+function make_loop_run() {
+    $i = 16;
+    return $i;
+
+}
+
 add_shortcode( 'test', 'test_shortcode' );
 
 function test_shortcode() {
   $bobby=rando(5);
     ob_start();
     
-    $i = -2;
-    while ($i < 17) {
+    $i = 50;
+    do {
        if ($i==16) {
         echo 'u is ancient';
        } elseif ($i<16) {
             echo $i;
        } else {
-        echo 'u is confusing';
+            echo 'ran the reset'; 
+                 $i=make_loop_run();
        }
        $i++;
        
 
-    }
+    } while ($i < 17);
 
 
     return ob_get_clean(); // Return the captured content as a string
