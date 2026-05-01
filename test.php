@@ -30,14 +30,22 @@ function test_shortcode() {
   $bobby=rando(5);
     ob_start();
     
-    if($bobby == 5) {
-        ?> <div >your height in feet is <? echo ($bobby) ?> !</div>
-        <?php 
-    } else { ?>
-        
-        <p> You ain't tall enough, sit down. </p> <?php
-    }
-    return ob_get_clean(); // Return the captured content as a string
-}
+    $i = -2;
+    while ($i < 17) {
+       if ($i==16) {
+        echo 'u is ancient';
+       } elseif ($i<16) {
+            echo $i;
+       } else {
+        echo 'u is confusing';
+       }
+       $i++;
+       
 
+    }
+
+
+    return ob_get_clean(); // Return the captured content as a string
+
+   }
 ?>
