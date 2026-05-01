@@ -37,23 +37,39 @@ function test_shortcode() {
   $bobby=rando(5);
     ob_start();
     
-    $i = 50;
-    do {
-       if ($i==16) {
-        echo 'u is ancient';
-       } elseif ($i<16) {
-            echo $i;
-       } else {
-            echo 'ran the reset'; 
-                 $i=make_loop_run();
-       }
-       $i++;
-       
+   // $i = 50;
+   // do {
+   //    if ($i==16) {
+   //     echo 'u is ancient';
+   //    } elseif ($i<16) {
+   //         echo $i;
+   //    } else {
+   //         echo 'ran the reset'; 
+   //              $i=make_loop_run();
+   //    }
+   //    $i++;
+   //    
+//
+  //  } while ($i < 17);
+//
 
-    } while ($i < 17);
+
+for ($cashew = 16; $cashew >= 10; $cashew--) {
+    echo $cashew . ' ';
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
     return ob_get_clean(); // Return the captured content as a string
-
    }
 ?>
