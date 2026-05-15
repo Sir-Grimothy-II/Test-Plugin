@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Testy Toes
+Plugin Name: Test
 Description: This does not bug tim
 Version: 1.0
 Author: Student.404
@@ -12,71 +12,43 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+require_once plugin_dir_path( __FILE__ ) . 'bob.php';
+
+
 add_action('wp_enqueue_scripts','enqueue_test_script');
-function enqueue_test_script(){
+function enqueue_test_script() {};
 
 wp_enqueue_style('test','test.css');
-
-}
-function rando($number) {
-    $randell = $number;
-    return $randell;
-
-
-}
-
-function make_loop_run() {
-    $i = 16;
-    return $i;
-
+if (file_exists(__DIR__ . '/helper/kint.php')) { 
+    require_once __DIR__ . '/helper/kint.php';
 }
 
 add_shortcode( 'test', 'test_shortcode' );
 
 function test_shortcode() {
-  $bobby=rando(5);
     ob_start();
-    
-   // $i = 50;
-   // do {
-   //    if ($i==16) {
-   //     echo 'u is ancient';
-   //    } elseif ($i<16) {
-   //         echo $i;
-   //    } else {
-   //         echo 'ran the reset'; 
-   //              $i=make_loop_run();
-   //    }
-   //    $i++;
-   //    
-//
-  //  } while ($i < 17);
-//
-
-
-//for ($cashew = 16; $cashew >= 10; $cashew--) {
- //   echo $cashew . ' ';
-//}
-
-
-$fruit = ['apple', 'banana', 'orange', 'grape', 'kiwi'];
-    $i = 0;
-    foreach ($fruit as $f) {
-         echo $f; }
-
-    foreach ($fruit as $f) {
-       
-         $fruit[$i] = $f . ' ';
-            echo $fruit[$i];
-        $i++;
-    }
-foreach ($fruit as $f) {
-         echo $f; }
-
-    include 'test_2.php';
-
-
-
+        setbowlingtimeform();            
     return ob_get_clean(); // Return the captured content as a string
-   }
+}
+
+
+function setbowlingtimeform() { 
+    $form = '<form method="GET" action="/test-2"> 
+                <label for="date">Date:</label>           
+                    <input type="date" name="date">
+                <label for="time">Time:</label>
+                    <input type="time" name="time">
+                <label for="bowlers">Bowlers:</label>
+                    <input type="number" name="bowlers">
+                    <input type="submit" value="Go">
+            </form>';
+    echo $form; 
+}
+
+
+
+
+
+
 ?>
+
